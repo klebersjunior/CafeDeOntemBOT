@@ -2,12 +2,23 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>b4af771c-b507-4abd-a7e0-8fb2ace6dcda</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="credentials.json" />
+  </ItemGroup>
 
   <ItemGroup>
     <Content Include="CafeDeOntemBOT.bot">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="credentials.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -18,5 +29,15 @@
     <PackageReference Include="Microsoft.Bot.Connector" Version="4.2.2" />
     <PackageReference Include="Microsoft.Bot.Schema" Version="4.2.2" />
     <PackageReference Include="Microsoft.Extensions.Logging.AzureAppServices" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GSheetReader\GSheetReader.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="token.json\Google.Apis.Auth.OAuth2.Responses.TokenResponse-user">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

@@ -1,8 +1,10 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using GSheetReader;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Schema;
 using Microsoft.Extensions.Logging;
@@ -72,25 +74,30 @@ namespace CafeDeOntemBOT
             // see https://aka.ms/about-bot-activity-message to learn more about the message and other activity types
             if (turnContext.Activity.Type == ActivityTypes.Message)
             {
-                // Get the conversation state from the turn context.
-                var state = await _accessors.CounterState.GetAsync(turnContext, () => new CounterState());
+                //Identify command
+                if (turnContext.Activity.Text.ToLower().Contains("p ") & (turnContext.Activity.Text.ToLower().Contains("café") || turnContext.Activity.Text.ToLower().Contains("cafe") || turnContext.Activity.Text.ToLower().Contains("filtro")))
+                {
+                    var parameters = turnContext.Activity.Text.ToLower().Split(" ").ToList();
+                    parameters.RemoveAt(0);
 
-                // Bump the turn count for this conversation.
-                state.TurnCount++;
+                    if (parameters.Exists(x => x.Equals("cafe") || x.Equals("café")))
+                    {
+                        Reader reader = new Reader();
+                        await turnContext.SendActivityAsync("Os próximos para trazerem café são: " + reader.GetInfo("cafe"));
+                    }
 
-                // Set the property using the accessor.
-                await _accessors.CounterState.SetAsync(turnContext, state);
+                    if (parameters.Exists(x => x.Equals("filtro")))
+                    {
+                        Reader reader = new Reader();
+                        await turnContext.SendActivityAsync("Os próximos para trazerem filtro são: " + reader.GetInfo("filtro"));
+                    }
 
-                // Save the new turn count into the conversation state.
-                await _accessors.ConversationState.SaveChangesAsync(turnContext);
-
-                // Echo back to the user whatever they typed.
-                var responseMessage = $"Turn {state.TurnCount}: You sent '{turnContext.Activity.Text}'\n";
-                await turnContext.SendActivityAsync(responseMessage);
+                    //await turnContext.SendActivityAsync(turnContext.Activity.Text);
+                }
             }
             else
             {
-                await turnContext.SendActivityAsync($"{turnContext.Activity.Type} event detected");
+                //await turnContext.SendActivityAsync($"{turnContext.Activity.Type} event detected");
             }
         }
     }

@@ -1,15 +1,26 @@
-﻿{
-  "name": "CafeDeOntemBOT",
-  "services": [
-    {
-      "type": "endpoint",
-      "name": "development",
-      "endpoint": "http://localhost:3978/api/messages",
-      "appId": "",
-      "appPassword": "",
-      "id": "1"
-    }
-  ],
-  "padlock": "",
-  "version": "2.0"
+{
+    "name": "CafeDeOntemBOT",
+    "description": "",
+    "services": [
+        {
+            "type": "endpoint",
+            "appId": "445690d8-0034-47be-8d5c-6453b16ec645",
+            "appPassword": "rIDQG89%}^moaukdBTB866=",
+            "endpoint": "http://localhost:3978/api/messages",
+            "id": "1",
+            "name": "development"
+        },
+        {
+            "type": "endpoint",
+            "appId": "445690d8-0034-47be-8d5c-6453b16ec645",
+            "appPassword": "rIDQG89%}^moaukdBTB866=",
+            "endpoint": "https://a1a5856b.ngrok.io/api/messages",
+            "name": "ngrok",
+            "id": "185"
+        }
+    ],
+    "padlock": "",
+    "version": "2.0",
+    "path": "C:\\Users\\ksantos\\source\\repos\\CafeDeOntemBOT\\CafeDeOntemBOT\\CafeDeOntemBOT.bot",
+    "overrides": null
 }

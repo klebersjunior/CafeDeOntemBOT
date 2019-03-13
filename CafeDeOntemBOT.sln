@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeDeOntemBOT", "CafeDeOntemBOT\CafeDeOntemBOT.csproj", "{93545B6F-AD32-4F65-805A-012B3E44EEB9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GSheetReader", "GSheetReader\GSheetReader.csproj", "{54DAF623-A986-4355-B172-3D470E47E620}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GSheetReader.ConsoleTest", "GSheetReader.ConsoleTest\GSheetReader.ConsoleTest.csproj", "{6865F4EC-FFD6-4A1C-B31B-7D3A50EE647B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{93545B6F-AD32-4F65-805A-012B3E44EEB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93545B6F-AD32-4F65-805A-012B3E44EEB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93545B6F-AD32-4F65-805A-012B3E44EEB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54DAF623-A986-4355-B172-3D470E47E620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54DAF623-A986-4355-B172-3D470E47E620}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54DAF623-A986-4355-B172-3D470E47E620}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54DAF623-A986-4355-B172-3D470E47E620}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6865F4EC-FFD6-4A1C-B31B-7D3A50EE647B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6865F4EC-FFD6-4A1C-B31B-7D3A50EE647B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6865F4EC-FFD6-4A1C-B31B-7D3A50EE647B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6865F4EC-FFD6-4A1C-B31B-7D3A50EE647B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
